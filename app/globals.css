@@ -1537,3 +1537,11 @@ button {
     animation: none;
   }
 }
+
+.product-download-actions {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 20px;
+}

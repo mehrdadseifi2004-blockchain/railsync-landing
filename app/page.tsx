@@ -367,13 +367,22 @@ export default function Home() {
                 <Check size={16} /> مشاهده فرایند در محیط سایت رجا
               </li>
             </ul>
-            <a
-              className="btn btn-primary"
-              href="/downloads/raja-assistant-v0.4.11-basic-release.zip"
-              download="raja-assistant-v0.4.11-basic.zip"
-            >
-              دانلود محصول <ArrowLeft size={17} />
-            </a>
+            <div className="product-download-actions">
+              <a
+                className="btn btn-primary"
+                href="/downloads/raja-assistant-v0.4.11-basic-release.zip"
+                download="raja-assistant-v0.4.11-basic.zip"
+              >
+                دانلود محصول <ArrowLeft size={17} />
+              </a>
+              <a
+                className="btn btn-soft"
+                href="/downloads/raja-extension-installation-guide.txt"
+                download="raja-extension-installation-guide.txt"
+              >
+                دانلود راهنمای نصب <ArrowLeft size={17} />
+              </a>
+            </div>
           </div>
           <div className="gallery">
             <figure className="gallery-main">
