@@ -43,6 +43,30 @@ const faqs = [
 
 export default function Home() {
   const [dark, setDark] = useState(false);
+  const [themePreference, setThemePreference] = useState<"system" | "light" | "dark">("system");
+
+  useEffect(() => {
+    const mediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
+    const savedPreference = localStorage.getItem("railsync-theme");
+
+    const preference =
+      savedPreference === "light" || savedPreference === "dark"
+        ? savedPreference
+        : "system";
+
+    setThemePreference(preference);
+    setDark(preference === "system" ? mediaQuery.matches : preference === "dark");
+
+    const handleSystemThemeChange = (event: MediaQueryListEvent) => {
+      if (preference === "system") setDark(event.matches);
+    };
+
+    mediaQuery.addEventListener("change", handleSystemThemeChange);
+
+    return () => {
+      mediaQuery.removeEventListener("change", handleSystemThemeChange);
+    };
+  }, []);
   const [openFaq, setOpenFaq] = useState<number | null>(0);
   const [activeImageIndex, setActiveImageIndex] = useState<number | null>(null);
 
@@ -120,7 +144,12 @@ export default function Home() {
         <div className="nav-actions">
           <button
             className="theme-toggle"
-            onClick={() => setDark(!dark)}
+            onClick={() => {
+              const nextTheme = dark ? "light" : "dark";
+              setDark(nextTheme === "dark");
+              setThemePreference(nextTheme);
+              localStorage.setItem("railsync-theme", nextTheme);
+            }}
             aria-label="تغییر تم"
           >
             {dark ? <Sun size={18} /> : <Moon size={18} />}
