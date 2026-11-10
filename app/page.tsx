@@ -1,4 +1,5 @@
 "use client";
+import { releaseMetadata } from "./release-metadata";
 
 import { useEffect, useState } from "react";
 import Image from "next/image";
@@ -397,13 +398,42 @@ export default function Home() {
               </li>
             </ul>
             <div className="product-download-actions">
-              <a
-                className="btn btn-primary"
-                href="/downloads/raja-assistant-v0.4.11-basic-release.zip"
-                download="raja-assistant-v0.4.11-basic.zip"
-              >
-                دانلود محصول <ArrowLeft size={17} />
-              </a>
+              <div className="download-version-card">
+                <div className="download-version-label">نسخه جدید</div>
+                <h3>دانلود برای Chrome 114 و جدیدتر</h3>
+                <p>نسخه دارای رابط Side Panel</p>
+                <a
+                  className="btn btn-primary"
+                  href={releaseMetadata.modern.file}
+                  download="raja-assistant-chrome-110-and-newer.zip"
+                >
+                  دانلود نسخه جدید <ArrowLeft size={17} />
+                </a>
+                <small>
+                  آخرین به‌روزرسانی: {releaseMetadata.modern.date}
+                  {" — "}
+                  ساعت {releaseMetadata.modern.time}
+                </small>
+              </div>
+
+              <div className="download-version-card">
+                <div className="download-version-label">نسخه سازگار با Chrome قدیمی</div>
+                <h3>دانلود برای Chrome 109 تا 113</h3>
+                <p>نسخه Popup با پنجره آبشاری</p>
+                <a
+                  className="btn btn-soft"
+                  href={releaseMetadata.legacy.file}
+                  download="raja-assistant-chrome-109-and-older.zip"
+                >
+                  دانلود نسخه قدیمی <ArrowLeft size={17} />
+                </a>
+                <small>
+                  آخرین به‌روزرسانی: {releaseMetadata.legacy.date}
+                  {" — "}
+                  ساعت {releaseMetadata.legacy.time}
+                </small>
+              </div>
+
               <a
                 className="btn btn-soft"
                 href="/downloads/raja-extension-installation-guide.txt"
