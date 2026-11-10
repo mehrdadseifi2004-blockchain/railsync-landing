@@ -1,8 +1,8 @@
 export const releaseMetadata = {
   "modern": {
     "label": "Chrome 114 و جدیدتر",
-    "date": "۱۴۰۵/۰۸/۱۸",
-    "time": "۰۵:۳۸",
+    "date": "۱۴۰۵/۰۸/۱۹",
+    "time": "۱۱:۲۴",
     "file": "/downloads/raja-assistant-v0.4.11-basic-release.zip"
   },
   "legacy": {
