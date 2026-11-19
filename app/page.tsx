@@ -496,7 +496,7 @@ export default function Home() {
               هماهنگی دمو با ما تماس بگیرید.
             </p>
             <div className="access-actions">
-              <a className="btn btn-white" href="tel:+989154444852">
+              <a className="btn btn-white" href="tel:09157337025">
                 تماس با فروش <ArrowLeft size={17} />
               </a>
               <span>
@@ -609,7 +609,7 @@ export default function Home() {
           <div className="contact-actions">
             <a
               className="btn btn-primary"
-              href="tel:+989154444852"
+              href="tel:09157337025"
             >
               تماس با ما <ArrowLeft size={17} />
             </a>
