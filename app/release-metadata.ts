@@ -7,8 +7,8 @@ export const releaseMetadata = {
   },
   "legacy": {
     "label": "Chrome 109 تا 113",
-    "date": "۱۴۰۵/۰۸/۱۹",
-    "time": "۱۰:۵۵",
+    "date": "۱۴۰۵/۰۸/۲۸",
+    "time": "۱۱:۵۵",
     "file": "/downloads/raja-assistant-v0.4.11-chrome109-legacy.zip"
   }
 } as const;
